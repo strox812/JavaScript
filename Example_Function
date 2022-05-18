@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreshMarket: get price</title>
+</head>
+<body>
+<script>
+  "use strict";
+
+  const good = 'Apple';
+  console.log(getGoodPrice(good));
+  console.log(getGoodPrice("Mango"));
+  
+  function getGoodPrice(trade) {
+    switch (trade) {
+      case 'Banana':
+        return 50;
+      case 'Mango':
+        return 80;
+      case 'Apple':
+        return 40;
+      default:
+        return NaN;
+    }
+}
+</script>
+</body>
+</html>
