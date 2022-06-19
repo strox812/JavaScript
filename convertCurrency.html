@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Currency</title>
+</head>
+<body>
+    <script>
+
+"use strict";
+
+/**
+ * Функция округляет число до сотых.
+ * @param {number} number число для округления.
+ * @returns {number}
+ */
+
+ function roundToHundredths(number) {
+  return parseInt(number * 100) / 100;
+}
+
+/**
+ * Функция конвертирует рубли в другую валюту.
+ * @param {number} roubles величина в рублях
+ * @param {string} currency поддерживаются значения "dollar" и "euro"
+ * @throw {Error} если передана не поддерживаемая валюта, то будет ошибка.
+ * @return {number} 
+ */
+
+function convertCurrency(roubles, currency) {
+  let currencyCost = 0;
+  switch(currency) {
+    case "dollar":
+        currencyCost = 66;
+        break;
+    case "euro":
+        currencyCost = 75;
+        break;
+    default:
+        throw new Error("Не верная валюта:" + currency);
+  }
+  let result = roundToHundredths(roubles / currencyCost);
+  return result;
+}
+
+let inDollar = convertCurrency(100, "dollar");
+console.log("Ваша сумма в долларах: " + inDollar);
+    </script>      
+</body>
+</html>
